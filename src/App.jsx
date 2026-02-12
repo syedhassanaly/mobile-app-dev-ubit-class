@@ -1,29 +1,26 @@
-import React, { useState } from "react";
+import React from "react";
 
 function App() {
-  const [inp, setInp] = useState("");
-  let [name, setName] = useState("");
-
-  function settingInput(e) {
-    setInp(e.target.value);
-  }
-
-  function AddName() {
-    setName(inp);
-    setInp("");
-  }
-
-  const greet = () => {
-    return "Hello " + name;
+  const user = {
+    name: "Syed Hassan Ali",
+    age: 20,
+    city: "Karachi",
   };
+
+  const colors = ["Red", "Yellow", "Green"];
 
   return (
     <div>
-      <div>
-        <h1>{greet()}</h1>
-      </div>
-      <input type="text" value={inp} onChange={settingInput} />
-      <button onClick={AddName}>Set</button>
+      <h1>User Data</h1>
+      <h2>{user.name}</h2>
+      <h3>{user.age}</h3>
+      <h4>{user.city}</h4>
+      <br />
+      <hr />
+      <h1>Colors Array</h1>
+      <h2>{colors[0]}</h2>
+      <h3>{colors[1]}</h3>
+      <h4>{colors[2]}</h4>
     </div>
   );
 }
